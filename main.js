@@ -128,11 +128,11 @@ function card(product) {
     let figure = document.createElement('figure');
     let figcaption = document.createElement("figcaption");
     let img = document.createElement('img');
-    let buy =document.createElement('button');
+    let buy = document.createElement('button');
     buy.textContent = ("buy");
-    let like =document.createElement('button');
+    let like = document.createElement('button');
     like.textContent = ("like");
-    let coment =document.createElement('button');
+    let coment = document.createElement('button');
     coment.textContent = ("coment");
     img.src = product.image;
     let h1 = document.createElement('h1');
@@ -146,10 +146,22 @@ function card(product) {
         ul.appendChild(li);
     })
 
-    buy.addEventListener("click",()=> confirm("anda membeli product?"));
-    like.addEventListener("click",()=> alert("anda menyukai product"));
-    coment.addEventListener("click",()=> prompt("tulis komentar anda"));
-
+    buy.addEventListener("click", (p) => {
+        let beli = confirm("anda membeli product?")
+        if (beli == true) {
+            alert("anda membeli product ini terimakasih");
+            console.log("beli");
+        }
+        else {
+            alert("anda tidak jadi membeli");
+        }
+    });
+    like.addEventListener("click", () => alert("anda menyukai product"));
+    coment.addEventListener("click", () => {
+        let komen=prompt("tulis komentar anda")
+        console.log("komentar: "+komen);
+    });
+    
     figcaption.appendChild(h1);
     figcaption.appendChild(ul);
     figcaption.appendChild(h2);
